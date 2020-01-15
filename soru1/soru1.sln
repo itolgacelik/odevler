@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soru1", "soru1.csproj", "{09FEEFBD-49E1-47AA-9C06-FF510F3CBEEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soru1", "soru1/soru1.csproj", "{09FEEFBD-49E1-47AA-9C06-FF510F3CBEEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

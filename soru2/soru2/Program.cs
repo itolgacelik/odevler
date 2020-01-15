@@ -17,7 +17,8 @@ namespace soru2
                 Console.WriteLine("Lütfen " + i + " no lu sınav sonucunu giriniz");
                 var sınavsonucu = Convert.ToInt32(Console.ReadLine());
 
-                if (sınavsonucu <= 100 & sınavsonucu >= 0)
+                // if (sınavsonucu <= 100 && sınavsonucu >= 0)
+                if(0 <= sınavsonucu && sınavsonucu <= 100)
                 {
                     toplam = toplam + sınavsonucu;
                     

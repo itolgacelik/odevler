@@ -17,19 +17,26 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine(i + "turu için ne kadar para ayıracaksın?");
                 int girisparası = Convert.ToInt32(Console.ReadLine());
-                int kalansermaye = sermaye - girisparası;
-                Console.WriteLine("KALAN PARA = " + kalansermaye);
                 if (girisparası > sermaye)
                 {
                     Console.WriteLine("Sermayenden fazlasını kullanamazsın");
-                    return;
+                    i--;
+                    continue;
                 }
+
+                int kalansermaye = sermaye - girisparası;
+                Console.WriteLine("KALAN PARA = " + kalansermaye);
+
+                
                 Console.WriteLine("Lütfen 0-5 arası bir sayıya bahis yap");
                 int tahmin = Convert.ToInt32(Console.ReadLine());
-                if (tahmin <= 0 & tahmin >= 5)
+                while (tahmin <= 0 || tahmin >= 5)
                 {
                     Console.WriteLine("Bu sayıya bahis giremezsin!!");
+                    Console.WriteLine("Lütfen 0-5 arası bir sayıya bahis yap");
+                    tahmin = Convert.ToInt32(Console.ReadLine());
                 }
+                
                 if (sermaye <= 0 )
                 {
                     Console.WriteLine("paran bitti moruq. bas git!!!!");
@@ -44,13 +51,13 @@ namespace ConsoleApplication1
                 Thread.Sleep(new Random().Next(10000)); // 10000 milisanıyeye kadar bekletme sonrakı kodu 
                 Console.WriteLine("kazanan sayı = " + rndno);
                 
-                if (tahmin == rndno & rndno == 0)
+                if (tahmin == rndno && rndno == 0)
                 {
                     sermaye = kalansermaye + girisparası * 6;
                     
                     Console.WriteLine("Tebrikler (0) tutturarak giriş paranın 6 katını kazandın. Kalan Sermayen = " + sermaye);
                 }
-                else if (tahmin == rndno & rndno!= 0)
+                else if (tahmin == rndno && rndno!= 0)
                 {
                     sermaye = kalansermaye + girisparası * 5;
                     Console.WriteLine("Tebrikler (1-5) arası tahmınını tutturarak giriş paranın 5 katını kazandın. Kalan sermaye =  " + sermaye);
